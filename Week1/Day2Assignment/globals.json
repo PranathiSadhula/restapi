@@ -1,0 +1,44 @@
+{
+	"id": "7eafb6d7-126e-4444-811a-3021d6fd5698",
+	"values": [
+		{
+			"key": "sys_id_change_request",
+			"value": "change_request",
+			"enabled": true
+		},
+		{
+			"key": "usr_sys_id",
+			"value": "usr_sys_id",
+			"enabled": true
+		},
+		{
+			"key": "initial_issue_count",
+			"value": "initial_issue_count",
+			"enabled": true
+		},
+		{
+			"key": "current_issue_count",
+			"value": "current_issue_count",
+			"enabled": true
+		},
+		{
+			"key": "jira_issue_id_rndm",
+			"value": "jira_issue_id_rndm",
+			"enabled": true
+		},
+		{
+			"key": "jira_issue_id_attachment",
+			"value": "id",
+			"enabled": true
+		},
+		{
+			"key": "expectedCreatedTime",
+			"value": "expectedCreatedTime",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2020-04-14T10:22:12.603Z",
+	"_postman_exported_using": "Postman/7.22.1"
+}

@@ -1,0 +1,14 @@
+{
+	"id": "eae38b6b-d6ee-445f-866b-5e1ccf557b79",
+	"name": "seviceNowBabu",
+	"values": [
+		{
+			"key": "server-Babu",
+			"value": "sb",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-04-18T04:54:27.657Z",
+	"_postman_exported_using": "Postman/7.22.1"
+}

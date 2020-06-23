@@ -1,0 +1,17 @@
+1) Get all the JIRA issues created in the last 24 hours (Print all issue id)
+
+2) Delete the issue randomly (1 to size) 
+
+3) Confirm the count of the issues reduced by one (by script)
+
+4) Post a new Issue with 2 attachments in same request
+
+5) Verify all the requests to have expected status code
+
+6) If any of the request take longer than 2 seconds, fail it
+
+7) Run them all in a collection for 2 iteration
+
+8) Make sure the environment and global variable are set as expected
+
+9) Run all of them in the newman for 2 iterations

@@ -1,0 +1,14 @@
+{
+	"id": "1f390c49-7730-40bc-8a5b-0b7ad3792409",
+	"name": "ServerNow_Pranathi",
+	"values": [
+		{
+			"key": "server",
+			"value": "dev97765.service-now.com",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-04-12T11:16:55.733Z",
+	"_postman_exported_using": "Postman/7.22.1"
+}

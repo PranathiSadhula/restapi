@@ -1,0 +1,51 @@
+<dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock-jre8</artifactId>
+            <version>2.26.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+        </dependency>
+
+
+1) Test Doubles
+	- Fake, Stub, Mock, Service Vitu
+	-Tools: Mockito, WireMock, PowerMock, EasyMock
+	-Mock: Stub, Recordings & Mappings, Speed, No Limit, Modify State
+    	- WireMock: Build Stub -> get, post -> status code, response, transformer, Recorder
+2) GraphQL
+    
+    - Advantages of using GraphQL
+    - Tools: PostMan, RestAssured (Partial), GraphQL Editor
+    - Queries, Variables
+    - Post (Query) -> Response (Json)
+    - Multiple Requests (under one)
+    - Async/Sync
+    - bringing the right data 
+    - only one edpoint
+    - No versioning, deprecated or optional
+3)  gRPC
+    
+    - Why gRPC vs REST
+    - Usage: Server to Server
+    - Mandated File: Proto
+    - Tool to test: BloomRPC
+    - RPC Server -> exposes all the RPC code built
+    - Contract (Proto)
+4) Karate
+    - Codeless automation (Semi coding from Cucumber Feature file)
+    - API + Web + Load
+    - Feature + additional Karate keywords
+    - No Step Definitions (Only Runner)
+    - Runner: JUnit
+    - Config files, basic-auth.js 
+    - Call another Feature file using call
+    - How to parse response
+    - Report: SureFire Report (HTML

@@ -1,0 +1,1824 @@
+from Saravanan to everyone:
+Summary:
+1. Global variables
+2. Environmental setup
+4. How to write Scripts
+5. How to check Post man logs
+6. chaining process
+7. Runner
+8. How to instal new man
+9. How to run the postman scrips automatically using new man
+from sangitha to everyone:
+Postman is built in elctronjs
+Request Types :
+1.    Get
+2.    Post
+3.    Delete
+4.    Put
+5.    Patch
+There are 4 different types of parameters 
+1.    Request param
+2.    Query param
+3.    Form param
+4.    Path param
+Headers are of 2 types
+1.    Content type – format of request to be sent to server
+2.    Accept – format of response received from server
+Chaining is a process of running a set of requests with data parameterization. Data from one response will be sent as the input to the next set of requests. These can be achieved using the variables in Postman
+Variables – 5 different
+1.    Global  - common data that can be used across collections
+2.    Collection – specific to that collection including all folders and requests
+3.    Environment – parameterized for any request [ dev, qa, uat, staging,etc]
+4.    Local – applicable to a particular request
+5.    Data – from external system (csv, JSON)
+Newman is used to run the requests from command line instead of opening and running Postman
+
+from Selva to everyone:
+Postman learning summary:
+- Features in postman, how to create collection,folders and request
+- Purpose of collection, environment, mock server, API doc
+- Overview of servicenow
+- Different request types (GET,POST,PUT,DELETE,PATCH)
+- Different error codes and their purpose (200,300,400,500)
+- Authorization techniques - Basic auth, giving auth details in collection level and inheriting to all folders and requests
+- Query parameters and significance
+- Body - raw 
+- Headers and its significance
+- DIfeerent types of variables -(Global,collection,env,local,data) creation and usage of the same.
+- Chaining concept and its significance
+- How to check the run logs
+- How to run in requests in a sequence using runner
+- Running the tests using command line (Newman)
+from pranathi sadhula to everyone:
+to server
+collection > similar to package or folder in java
+API is build before  UI and befor API built, DB is build
+Moc server is used when api is not ready
+Postman has 2 req : get and post
+Postman
+    RequestTypes
+        GET 
+    Status Code : 200
+                Fetches records 
+Returns 1 or many records on sucess
+Returns 0 on failure
+        POST
+Status Code : 201
+insterts one record into system
+Returns 1 record(-- record which is instered) on success
+        DELETE
+Status Code : 204
+Removes record from system
+Returns nothing or one
+        PUT
+Status Code : 204
+updates enitre record(all columns) into system
+Returns one
+        PATCH
+Status Code : 201
+updates part of a record into system
+Returns one
+    Components
+        Collection
+            folder
+            Request
+                URL
+                    HostName or IP address
+                    Port(Optional)
+                    Resources(Example:table names, attachment files etc which are common accross the application)
+                Request Type
+                Request Body
+                    form-data
+                    raw
+                    params
+
+from suganthi to everyone:
+What is api testing
+How API  differs from webservice, microservices...
+Need of API testing and its adv
+What API testing can and can't do
+Tools used around API testing
+Where it finds is usage
+Postman tool
+ formats supported JSON, XML
+ Actions supported: Get, Post, Delete
+ Variables: 
+from Nagarajan to everyone:
+1) REST Methods
+2) Service now
+3) post man - Request types
+4) Authentication --> Basic
+5) Limiting the REST response codes using query parameter.
+6) REST Status codes
+7) Request execution --> Create, GET, Delete
+8) test validations
+9) newman execution
+10) JIRA endpoints
+11) global variables, environment variables and collection variables.
+from Venkat to everyone:
+Request Types
+
+1)Get        -Select multiple records     :Return 0 or many
+2)Post        -Insert a Record        :Return 1
+3)Delete    -Delete a record         :Return nothing or one
+4)Put        -Update a record(Entire)    :Return one
+5)Patch        -Update a redord(Portion)    :Return one
+
+
+
+Collection
+    -> Folder
+        ->Request
+
+
+URL:
+1)Server        :API Hosted machines(IPAddress/Hostname)
+2)Port Number        :Where API is listening(Default-80)
+3)Resources        :API Details
+
+
+Example:
+Server : https://dev73361.service-now.com/
+Port : 80(Optional)
+Resources : api/now/table/incident
+Variables:
+1.Global        -Common data to be shared across collection
+2.Collection        -Specific to the collection whereas all folders/requests applies tat vacriable
+3.Environment        -Parameterized for any request[Local,Dev,staging,UAT,QA]
+4.Local            -Only to specific request
+5.Data            -Data from external source[Json,CSV]
+
+Examples:
+Global -> sys_id_incident
+Collection -> table_name
+Environment -> Server, Port
+Local -> any
+
+
+Pre-Request Script -> JS code code for Pre-Request
+Test -> Post
+from senthil to everyone:
+Whats API,WebService?
+difference between API and WebService?
+different ways of documentation?
+Rest request type and its equvalent operation and status code in DB?
+different series of error codes
+Postman hierarchy
+Structure of URL
+About Basic authentication
+Paramerization
+Chaining
+Different type of variables in postman
+Logs
+Pre-request and tests
+newman
+from sruthi to everyone:
+    1. Jql based filter in postman
+    2. Variables (global, collection,environment,local, data)
+    3. Learnt how to set global variables, environment variables and how to use them
+    4. Checking logs in postman
+    5. Chaining- whatever is coming as response will be sent as request
+    6.  learnt how to write logic in test
+    7. Runner in postman
+    8. Configuring newman and executing the scripts in newman
+
+from shankar to everyone:
+1. Postman Tool 
+2. Request types in REST
+3. API Documentation
+4. 3 portions of URL
+5. Status code
+6. Parameters and its types
+7. Header - content-type and Accept
+8. Chaining the API request
+9. Variables and its types
+10. scripting using java script
+11. NewMan
+from Rohini V to everyone:
+-    Single sign on
+-    JIRA – automated defect logging
+-    Variables and chaining:
+-    Variables: Fundamental of chaining
+Global – common data to be shared across collections
+Collection – specific to collection whereas all folders or request applies that variable
+Environment – Parameterized for any reques (local,dev, staging, UAT, QA) eg. server
+Local – Only to that request
+Data – data from external system (csv, JSON)
+
+from Roshan to everyone:
+/request applies to variable
+    -Environment:Parameterized for any request [Local,dev,UAT,QA]
+    -Local: only to that request
+    -Data: Data from external system(csv,json)
+Example:
+    Global - > sys_id_incident
+    Collection -> table name
+    Environment -> server,port
+    Local ->any
+-Logs
+    -Network
+    -Request Header
+    -Response Header
+    -Response Body
+NewMan - Command Line -> NodeJs 
+   1) Install NodeJs  (https://nodejs.org/dist/v12.16.2/node-v12.16.2-x64.msi)
+   2) Verify the installation is complete : node -v (cmd) | npm -v (cmd)
+   
+   3) Install Newman 
+      npm install -g newman
+   4) Verify the installation is complete : newman -v
+   5) Export the collection (request), environment, globals
+    a) Collection -> Only the request you wanted to run in NewMan (.json)
+        b) Environment (only the environment -> that you use) -> json
+        c) Globals
+    6) Run the newman scripts
+       newman run SN_Collection.json -e environment.json -g globals.json -n 2
+from Krishna to everyone:
+asic Of Postman
+Request
+Response
+API Documentation
+URL End Point
+Json Format
+Postman Authentication
+Status Code pof Postman
+Parameter Types
+Headers
+Chain Running of API
+Variables
+    Global    
+    Collection
+    Ennnvoirment
+    Local
+Chain Running of API
+Postman Logs
+Pre request script
+Test
+Export
+New Man
+from clinda to everyone:
+1.Types of requests in REST
+2.URL?
+3.Creating collection and folder in Postman and 
+ inherting Autorisation details
+4.Get request
+5.Postrequest
+6.Post reuest with parameters
+7.Headers of request
+8.Delete Request
+9.Types of variables
+  Global
+  collection
+  environment
+  local
+  data
+10.Postman Chaining
+11.Prerequisite and postrequisite
+12.test with postman code snippets
+13.postman collection runner
+14.postman console
+15.newman
+from Sadhasivam to everyone:
+Summary of my learning in detail:
+1)how to create collection 
+2)how to form an URI of an api
+3)Auth token
+4)Header - content type, application
+5)Body - using JSON
+6)Query param for get request
+7)Structure of JSON
+8)Get, Post, Delete operation
+
+from ATHIRA V to everyone:
+Postman
+Request, collection,environment
+Req types
+GET, POST, PUT, DELETE
+Variable types
+Global, collection, environment, local
+Runner
+Run collections, logs, console
+http status codes
+from Deepak Sadanandan to everyone:
+eaders are info sent to the requester
+Content-Type --> contains --> content information for the request sent
+Accept --> to force the response with the particular content type info
+12-Apr:
+Variable and Chaining
+Variabes:
+Global        - Common data to be shared across all the collections    
+Collection    - Common data to be shared across all the folders and or requests within this Collection    
+Environment    - Parametrized for any requests (like local env, dev, QA, UAT - e.g. the diff env will have diff server)
+Local - only for that req...cannot be used to exchange info
+Data        - Data from external files like csv, json
+https://{{server}}/api/now/table/{{table_name}}
+Pre-request script -> similar to @BeforeMethod annotation
+Tests script --> similar to @AfterMethod annotation
+Postman has inbuilt js library
+eg. --> pm.response.json()
+GET response gives many records ---> use Array of JS to pick one
+resp.result[0].sys_id;
+resp.result.count
+NewMan - cmdln --> built on NodeJS
+from pranathi sadhula to everyone:
+EP
+from Deepak Sadanandan to everyone:
+EP
+from sruthi to everyone:
+EP
+from Manirathinam to everyone:
+EP
+from Nags-PC to everyone:
+EP
+from Gopalakrishnan to everyone:
+EP
+from Sadhasivam to everyone:
+EP
+from sangitha to everyone:
+EP
+from Krishna to everyone:
+ep
+from Selva to everyone:
+EP
+from clinda to everyone:
+EP
+from Vigneshwar R to everyone:
+EP
+from Nagarajan to everyone:
+ep
+from suganthi to everyone:
+EP
+from Jeeva (Guest) to everyone:
+EP
+from Saravanan to everyone:
+ep
+from Jayakumar B to everyone:
+EP
+from SP, Muthukkaruppan to everyone:
+EP
+from Mahabu Basha to everyone:
+EP
+from balamurugan to everyone:
+ep
+from shankar to everyone:
+ep
+from Senthil to everyone:
+EP
+from cb-kavi to everyone:
+ep
+from Visa to everyone:
+EP
+from 246145 - Sankari Chandran to everyone:
+EP
+from Venkat to everyone:
+ep
+from Gokila to everyone:
+ep
+from subha to everyone:
+EP
+from Nagarajan to everyone:
+basic
+from Selva to everyone:
+Basic Auth
+from Senthil to everyone:
+Basic Auth
+from 246145 - Sankari Chandran to everyone:
+Basic Auth & Key
+from Mahabu Basha to everyone:
+basic
+from subha to everyone:
+Inheri basic
+from Manirathinam to everyone:
+Basic Auth
+from pranathi sadhula to everyone:
+basic and inherit from parent
+from Manirathinam to everyone:
+No
+from Vigneshwar R to everyone:
+No
+from Prasanth to everyone:
+no
+from Selva to everyone:
+no
+from Gopalakrishnan to everyone:
+no
+from sruthi to everyone:
+no
+from Roshan to everyone:
+no
+from vinod to everyone:
+No
+from sakthi to everyone:
+No
+from Jayakumar B to everyone:
+no
+from pranathi sadhula to everyone:
+no
+from Venkat to everyone:
+no
+from ATHIRA V to everyone:
+no
+from balamurugan to everyone:
+no
+from Senthil to everyone:
+No
+from Chandu priya to everyone:
+no
+from Gokila to everyone:
+no
+from Nagarajan to everyone:
+no
+from suganthi to everyone:
+no
+from Anil to everyone:
+no
+from Deepak Sadanandan to everyone:
+No
+from nirmal to everyone:
+no
+from shankar to everyone:
+no
+from senthil to everyone:
+No
+from Nagarajan to everyone:
+no
+from Sadhasivam to everyone:
+no
+from Prasanth to everyone:
+no
+from Venkat to everyone:
+no
+from Vigneshwar R to everyone:
+No
+from Deepak Sadanandan to everyone:
+No
+from Senthil to everyone:
+no
+from sruthi to everyone:
+no
+from Roshan to everyone:
+no
+from Athira A S to everyone:
+no
+from vinod to everyone:
+No
+from Mahabu Basha to everyone:
+NoNo
+from ATHIRA V to everyone:
+no
+from subha to everyone:
+no
+from Gopalakrishnan to everyone:
+no
+from Selva to everyone:
+no
+from Saravanan to everyone:
+no
+from Rohini V to everyone:
+no
+from Nirmaladevi to everyone:
+no
+from balamurugan to everyone:
+no
+from Jayakumar B to everyone:
+no
+from suganthi to everyone:
+no
+from Nirmaladevi to everyone:
+no
+from Nags-PC to everyone:
+no
+from Selva to everyone:
+Yes
+from Venkat to everyone:
+Yes
+from Prasanth to everyone:
+yes
+from Nagarajan to everyone:
+yes
+from Deepak Sadanandan to everyone:
+yes
+from balamurugan to everyone:
+yes
+from Manirathinam to everyone:
+Yes
+from sruthi to everyone:
+yes
+from ATHIRA V to everyone:
+yes
+from pranathi sadhula to everyone:
+yes
+from Gopalakrishnan to everyone:
+yes
+from Nirmaladevi to everyone:
+yes
+from Anil to everyone:
+yes
+from Krishna to everyone:
+yes
+from suganthi to everyone:
+Ep
+from vinod to everyone:
+Yes
+from Mahabu Basha to everyone:
+Yes
+from Senthil to everyone:
+yes
+from SP, Muthukkaruppan to everyone:
+Yes
+from Athira A S to everyone:
+yes
+from Jayakumar B to everyone:
+yes
+from VENKAT to everyone:
+yes
+from Roshan to everyone:
+yes
+from Vigneshwar R to everyone:
+Yes
+from Muthu Kumaran to everyone:
+Muthu Kumaran, joined late
+from 246145 - Sankari Chandran to everyone:
+No
+from sruthi to everyone:
+no
+from Selva to everyone:
+no
+from suganthi to everyone:
+no
+from vinod to everyone:
+No
+from VENKAT to everyone:
+no
+from Senthil to everyone:
+No
+from Jayakumar B to everyone:
+no
+from ATHIRA V to everyone:
+no
+from Rohini V to everyone:
+no
+from Muthu Kumaran to everyone:
+no
+from Roshan to everyone:
+no
+from SP, Muthukkaruppan to everyone:
+NO
+from pranathi sadhula to everyone:
+no
+from Gopalakrishnan to everyone:
+no
+from Mahabu Basha to everyone:
+No
+from Venkat to everyone:
+No
+from balamurugan to everyone:
+no
+from Nirmaladevi to everyone:
+no
+from pushp to everyone:
+no
+from 246145 - Sankari Chandran to everyone:
+Security
+from srikanth to everyone:
+no
+from Selva to everyone:
+To genrate a token
+from Nirmaladevi to everyone:
+yes
+from Nagarajan to everyone:
+ep
+from 246145 - Sankari Chandran to everyone:
+EP
+from Krishna to everyone:
+ep
+from ATHIRA V to everyone:
+ep
+from Mahabu Basha to everyone:
+ep
+from sruthi to everyone:
+EP
+from Manirathinam to everyone:
+EP
+from pranathi sadhula to everyone:
+ep
+from Selva to everyone:
+EP
+from Rohini V to everyone:
+EP
+from Jeeva (Guest) to everyone:
+EP
+from suganthi to everyone:
+EP
+from Vigneshwar R to everyone:
+EP
+from srikanth to everyone:
+EP
+from Muthu Kumaran to everyone:
+ep
+from balamurugan to everyone:
+ep
+from TestLeaf WebEx to everyone:
+https://developer.servicenow.com/blog.do?p=/post/inbound-oauth-auth-code-grant-flow-part-1/
+from sruthi to everyone:
+yes
+from Vigneshwar R to everyone:
+YES"'
+from Selva to everyone:
+EP
+from pranathi sadhula to everyone:
+ep
+from 246145 - Sankari Chandran to everyone:
+ep
+from Gokila to everyone:
+EP
+from Saravanan to everyone:
+3259/
+from TestLeaf WebEx to everyone:
+https://dev49243.service-now.com/oauth_token.do
+from Manirathinam to everyone:
+EP
+from sruthi to everyone:
+EP
+from Muthu Kumaran to everyone:
+ep
+from Vigneshwar R to everyone:
+Yes
+from pranathi sadhula to everyone:
+ep
+from Rohini V to everyone:
+EP
+from sangitha to everyone:
+ep
+from srikanth to everyone:
+EP
+from ATHIRA V to everyone:
+ep
+from Selva to everyone:
+no
+from Nagarajan to everyone:
+no
+from suganthi to everyone:
+no
+from Jaydeep to everyone:
+no
+from Rohini V to everyone:
+no
+from sruthi to everyone:
+no
+from Roshan to everyone:
+no
+from srikanth to everyone:
+no
+from balamurugan to everyone:
+please explain Redirect URL one more time
+from Benz to everyone:
+How to handle the situation where the api gives response based on the browser session. Gives 403 if session is expired.
+from balamurugan to everyone:
+got it, thanks Babu
+from Anil to everyone:
+If we use some other tool for api testing,what will be redirect url, whether it will be documented as well
+from Benz to everyone:
+Thnaks
+from Anil to everyone:
+ok
+from Jayakumar B to everyone:
+can you repeat the scenario once when a person go on leave and forget to generate oauth token (client id. and secret credential....)
+from Senthil to everyone:
+30 mins expiration is for the first time when the token is generated or if the token is never used  for 30mins then it will expire
+from Jayakumar B to everyone:
+ok
+from Jayakumar B to everyone:
+Thanks Babu
+from TestLeaf WebEx to everyone:
+https://developer.servicenow.com/blog.do?p=/post/inbound-oauth-auth-code-grant-flow-part-1/
+from Muthu Kumaran to everyone:
+Explored postman in my office, App is not allowed to install. However, chrome extension can be installed. Does it have all the features like standalone App.
+from Muthu Kumaran to everyone:
+ok
+from Nagarajan to everyone:
+sir they keyword to search in servicenow... i forgt
+from Muthu Kumaran to everyone:
+reGIS?
+from TestLeaf WebEx to everyone:
+System OAuth > Application Registry and click New
+from Nagarajan to everyone:
+thanks sir
+from nirmal to everyone:
+refresh token time was 7200?
+from Vigneshwar R to everyone:
+what we needs to give in state filed, SIr
+from Vigneshwar R to everyone:
+I have a new filed under scope field, named as state
+from Narasimhan to everyone:
+do u need to select "Connect to a third party OAuth Provider" in SNOW while creating NEW?
+from Senthil to everyone:
+Done
+from VENKAT to everyone:
+after clicking the request token a white scrren is displayed from postman..
+from Mahabu Basha to everyone:
+babu can you share the auth url for postman?
+from VENKAT to everyone:
+ok sir
+from Narasimhan to everyone:
+sorry i got it
+from Selva to everyone:
+Post clicking Request token, Iam getting Manage access tokens
+from Vigneshwar R to everyone:
+Me
+from VENKAT to everyone:
+iam not getting
+from Jayakumar B to everyone:
+manage access token
+from Roshan to everyone:
+Done
+from Senthil to everyone:
+What is refresh token?
+from balamurugan to everyone:
+Completed
+from Krishna to everyone:
+i am getting Error: Cound not complete OAuth 2.0 token request: "access_denied"
+from Venkat to everyone:
+HOw to get Callback URL
+from nirmal to everyone:
+scope and state?
+from nirmal to everyone:
+is that dummy value?
+from Selva to everyone:
+ It says access token not found in the response
+from Selva to everyone:
+LEt me check
+from sakthi to everyone:
+Completed
+from VENKAT to everyone:
+ok sir
+from Prasanth to everyone:
+I got this error "{"error_description":"access_denied","error":"server_error"}"
+from sangitha to everyone:
+done
+from Mahabu Basha to everyone:
+OAuth page of service now is dipslayed after request token is clicked
+from 246145 - Sankari Chandran to everyone:
+Done
+from Mahabu Basha to everyone:
+do i need to provide the client id and secred?
+from Vigneshwar R to everyone:
+Sir, which username and password we need to give on the Service now window
+from Narasimhan to everyone:
+I got this errorunauthorized_client: The client credentials provided (those of the service you are using) are either not valid or not trusted
+from Mahabu Basha to everyone:
+Thanks
+from nirmal to everyone:
+i got the token generated babu, i need to use the acess token not the user token right?
+from Anil to everyone:
+yes
+from TestLeaf WebEx to everyone:
+https://developer.servicenow.com/blog.do?p=/post/inbound-oauth-auth-code-grant-flow-part-1/
+from Nagarajan to everyone:
+ep
+from VENKAT to everyone:
+yes
+from TestLeaf WebEx to everyone:
+https://www.getpostman.com/oauth2/callback
+from anilg to everyone:
+Done with the steps, able to generate token, but I missed the first 20 min of session(I mean concept)..lately joined
+from Jayakumar B to everyone:
+access token not found in the response
+from Jayakumar B to everyone:
+this is the error i get under manage access screen
+from Nirmaladevi to everyone:
+we have totype callback url or is there any waytoget itlike copyand paste?
+from Vigneshwar R to everyone:
+Completed sir
+from Jayakumar B to everyone:
+no 
+from TestLeaf WebEx to everyone:
+https://www.getpostman.com/oauth2/callback
+from Jayakumar B to everyone:
+ok
+from sruthi to everyone:
+completed
+from pranathi sadhula to everyone:
+completed
+from Roshan to everyone:
+complteed
+from clinda to everyone:
+completed
+from 246145 - Sankari Chandran to everyone:
+Completed
+from anilg to everyone:
+Completed
+from Deepak Sadanandan to everyone:
+Completed
+from Krishna to everyone:
+completed
+from Visa to everyone:
+completed
+from nirmal to everyone:
+completed
+from sangitha to everyone:
+completed
+from Muthu Kumaran to everyone:
+completed
+from Narasimhan to everyone:
+i got the service now login page when requesting the token
+from cb-kavi to everyone:
+completed
+from Vigneshwar R to everyone:
+Completed
+from sakthi to everyone:
+completed
+from Anil to everyone:
+i'm getting Unsupported scopes: 
+from Baskar to everyone:
+ms
+Error: Cound not complete OAuth 2.0 token request: "access_denied"
+from Jayakumar B to everyone:
+completed
+from Senthil to everyone:
+Completed
+from suganthi to everyone:
+completed
+from TestLeaf WebEx to everyone:
+useraccount
+from Jayakumar B to everyone:
+issue resolved
+from nirmal to everyone:
+babu, once my access token is expired how do we manage again. do we need to follow the same steps again
+from pranathi sadhula to everyone:
+ep
+from nirmal to everyone:
+?
+from sruthi to everyone:
+EP
+from Vigneshwar R to everyone:
+EP
+from balamurugan to everyone:
+ep
+from Muthu Kumaran to everyone:
+ep
+from Jayakumar B to everyone:
+ep
+from sakthi to everyone:
+EP
+from suganthi to everyone:
+EP
+from Nags-PC to everyone:
+EP
+from shankar to everyone:
+ep
+from Gopalakrishnan to everyone:
+EP
+from Krishna to everyone:
+ep
+from Visa to everyone:
+ep
+from srikanth to everyone:
+EP
+from Deepak Sadanandan to everyone:
+EP
+from Rohini V to everyone:
+EP
+from Chandu priya to everyone:
+Ep
+from VENKAT to everyone:
+yes sir
+from Jeeva (Guest) to everyone:
+EP
+from Manirathinam to everyone:
+EP
+from anilg to everyone:
+EP
+from Mahabu Basha to everyone:
+EP
+from Roshan to everyone:
+Ep
+from sangitha to everyone:
+e
+from Ananda Padmanab Manoharan to everyone:
+ep
+from Nagarajan to everyone:
+ep
+from pushp to everyone:
+ep
+from subha to everyone:
+EP
+from nirmal to everyone:
+ok
+from Gopalakrishnan to everyone:
+yes
+from anilg to everyone:
+EP
+from sruthi to everyone:
+yes
+from Chandu priya to everyone:
+yes
+from Nagarajan to everyone:
+ep
+from srikanth to everyone:
+EP
+from Gopalakrishnan to everyone:
+Global
+from Selva to everyone:
+Coll, env,global,data
+from Nagarajan to everyone:
+environment, global, collection
+from sakthi to everyone:
+global, environment, collection
+from suganthi to everyone:
+local ,gloabl, environment and collection
+from Nagarajan to everyone:
+data
+from Roshan to everyone:
+Global.env,local,data
+from cb-kavi to everyone:
+Global, Environment, local,collection
+from pranathi sadhula to everyone:
+collection, environment, global and local
+from Mahabu Basha to everyone:
+Env, global, local, collection
+from sruthi to everyone:
+global,environment
+from balamurugan to everyone:
+global, collection, local
+from vinod to everyone:
+Global, Environment, Collection, Local
+from ATHIRA V to everyone:
+collection, env, global,local
+from Gopalakrishnan to everyone:
+environment, locat,data, global
+from senthil to everyone:
+Local, global, collection, env 
+from VENKAT to everyone:
+global,collection environment,local
+from Sadhasivam to everyone:
+globa, environment, collection
+from Athira A S to everyone:
+collec, env,global,local
+from Vigneshwar R to everyone:
+collectio, env, glob
+from Gokila to everyone:
+collection variable,env,global
+from Imran Hussain to everyone:
+collection,global,env,local
+from shankar to everyone:
+Global, collection, Env, Local
+from anilg to everyone:
+Local, Data
+from sruthi to everyone:
+collection'
+from clinda to everyone:
+Global env collection local
+from SP, Muthukkaruppan to everyone:
+data,local, global, collection
+from Rohini V to everyone:
+collection, environment, global and local
+from Mahabu Basha to everyone:
+Env, global, local, collection
+from sruthi to everyone:
+global,environment
+from Jayakumar B to everyone:
+Global, collection, enviroment, local
+from nirmal to everyone:
+gloabl,coll,env,data
+from sruthi to everyone:
+data
+from Ravikumar S to everyone:
+local,global,collection,env
+from Jeeva (Guest) to everyone:
+global, local, env, coll
+from srikanth to everyone:
+Global, Collection, Enviromental, Local
+from Krishna to everyone:
+global, env, local, collection
+from Chandu priya to everyone:
+collection and global,local,enviornment
+from Manikandan Rudrappa to everyone:
+Glob, env, collection, local 
+from Vigneshwar R to everyone:
+Global
+from nirmal to everyone:
+global
+from Nagarajan to everyone:
+global
+from anilg to everyone:
+Global
+from 246145 - Sankari Chandran to everyone:
+global, collec,  environ, local
+from suganthi to everyone:
+env
+from Roshan to everyone:
+Global
+from Chandu priya to everyone:
+global
+from Imran Hussain to everyone:
+global
+from Muthu Kumaran to everyone:
+global
+from Rohini V to everyone:
+global
+from Jayakumar B to everyone:
+Global
+from sangitha to everyone:
+global
+from cb-kavi to everyone:
+glo
+from srikanth to everyone:
+Global
+from Prasanth to everyone:
+global
+from Manikandan Rudrappa to everyone:
+Global 
+from Gopalakrishnan to everyone:
+glob
+from Jeeva (Guest) to everyone:
+global
+from Krishna to everyone:
+global
+from Selva to everyone:
+GLobal
+from Ravikumar S to everyone:
+global
+from nirmal to everyone:
+collection
+from Vigneshwar R to everyone:
+Collection
+from anilg to everyone:
+Collection
+from sangitha to everyone:
+collection
+from Gokila to everyone:
+environment
+from Roshan to everyone:
+env
+from Imran Hussain to everyone:
+env
+from Krishna to everyone:
+envir
+from Gopalakrishnan to everyone:
+env
+from sruthi to everyone:
+collection
+from Selva to everyone:
+COllection
+from cb-kavi to everyone:
+colectiomn
+from Mahabu Basha to everyone:
+colle
+from Vigneshwar R to everyone:
+Env
+from Ravikumar S to everyone:
+coll
+from Benz to everyone:
+Env
+from Chandu priya to everyone:
+collection
+from Prasanth to everyone:
+collection
+from Selva to everyone:
+Env
+from Mahabu Basha to everyone:
+env
+from Roshan to everyone:
+Collection
+from srikanth to everyone:
+Collection
+from cb-kavi to everyone:
+Env
+from nirmal to everyone:
+local
+from sruthi to everyone:
+env
+from Roshan to everyone:
+env
+from VENKAT to everyone:
+env
+from anilg to everyone:
+Environment
+from Manikandan Rudrappa to everyone:
+Collect
+from Ravikumar S to everyone:
+env
+from Rohini V to everyone:
+envi
+from sangitha to everyone:
+env
+from Muthu Kumaran to everyone:
+collection
+from Mahabu Basha to everyone:
+local
+from Selva to everyone:
+Local
+from sruthi to everyone:
+local
+from Vigneshwar R to everyone:
+Local
+from Benz to everyone:
+Locsl
+from cb-kavi to everyone:
+Local
+from Ravikumar S to everyone:
+local
+from VENKAT to everyone:
+local
+from sangitha to everyone:
+local
+from Prasanth to everyone:
+local
+from anilg to everyone:
+Local
+from Roshan to everyone:
+local
+from Imran Hussain to everyone:
+local
+from Rohini V to everyone:
+local
+from srikanth to everyone:
+Environ
+from suganthi to everyone:
+local
+from Muthu Kumaran to everyone:
+environmant
+from Gopalakrishnan to everyone:
+local
+from srikanth to everyone:
+local
+from Muthu Kumaran to everyone:
+local
+from Jayakumar B to everyone:
+Global> collecion > environment > Local
+from Suhail to everyone:
+Joined just now
+from Roshan to everyone:
+1
+from Rohini V to everyone:
+one
+from sangitha to everyone:
+1
+from Senthil to everyone:
+1
+from Selva to everyone:
+1
+from sruthi to everyone:
+1
+from Nirmaladevi to everyone:
+1
+from pranathi sadhula to everyone:
+1
+from Imran Hussain to everyone:
+1
+from Rohini V to everyone:
+short_desc
+from nirmal to everyone:
+Key is also varaibla and value is also variable?
+from Roshan to everyone:
+i remember you gave iteration as 1. but now it has ran 4 iterations?
+from pranathi sadhula to everyone:
+yes
+from sangitha to everyone:
+ep
+from Vigneshwar R to everyone:
+Yes
+from suganthi to everyone:
+EP
+from Selva to everyone:
+EP
+from sruthi to everyone:
+EP
+from Krishna to everyone:
+ep
+from Deepak Sadanandan to everyone:
+EP
+from Sadhasivam to everyone:
+EP
+from Rohini V to everyone:
+EP
+from Gopalakrishnan to everyone:
+ep
+from Mahabu Basha to everyone:
+ep
+from Bharathi to everyone:
+EP
+from 246145 - Sankari Chandran to everyone:
+ep
+from Nags-PC to everyone:
+ep
+from Chandu priya to everyone:
+yes
+from balamurugan to everyone:
+ep
+from senthil to everyone:
+EP
+from VENKAT to everyone:
+ep
+from Muthu Kumaran to everyone:
+ep
+from srikanth to everyone:
+EP
+from shankar to everyone:
+ep
+from Ananda Padmanab Manoharan to everyone:
+EP
+from Nagarajan to everyone:
+ep
+from Selva to everyone:
+CLear
+from Roshan to everyone:
+Ok thank you
+from anilg to everyone:
+clearf
+from Venkat to everyone:
+HI Babu,
+from Roshan to everyone:
+copy paste plz
+from Venkat to everyone:
+Am getting error for oAuth
+from TestLeaf WebEx to everyone:
+1) Create a new Collection (DataRunner)
+2) Duplicate your create change request with no environmental / global
+3) Move it to new collection
+4) First, Run and confirm - it works !!
+5) Paramaterize the body to take the test data from csv file
+6) Run from collection runner
+   choose data file
+7) Run from NewMan and confirm it works for multiple data
+   -d 
+from Venkat to everyone:
+Sure, thanks !!
+from nirmal to everyone:
+babu is the file sent?
+from Gokila to everyone:
+babu I m getting like, Failed running the collection: Error while parsing data file: Invalid Closing Quote: found non trimable byte after quote at line 3
+from Gokila to everyone:
+no baby.. from notepad i have saved
+from Gokila to everyone:
+it is opening baby
+from nirmal to everyone:
+babu can u show a sample fie agaij
+from Gokila to everyone:
+opening babu
+from Gokila to everyone:
+okay
+from TestLeaf WebEx to everyone:
+short_d
+This is 1
+This is 2
+
+from Nagarajan to everyone:
+need to execute in newman ?
+from Nagarajan to everyone:
+ep
+from pranathi sadhula to everyone:
+me
+from sruthi to everyone:
+ep
+from anilg to everyone:
+completed
+from SP, Muthukkaruppan to everyone:
+Completed
+from srikanth to everyone:
+EP
+from Selva to everyone:
+After running , if i goand check in the runner, it is not passing the value, instead it is showing only my variable
+from Imran Hussain to everyone:
+done
+from suganthi to everyone:
+completed
+from Jayakumar B to everyone:
+completed
+from Deepak Sadanandan to everyone:
+completed
+from Nagarajan to everyone:
+can u send json file also sir?
+from Selva to everyone:
+Iam unable to see the passed value, it shows only the variable Babu in the runner
+from Selva to everyone:
+Yes. in the runner
+from Selva to everyone:
+I selected the intended file
+from Selva to everyone:
+oops
+from Selva to everyone:
+that d mistake
+from Selva to everyone:
+thanks Babu
+from Nagarajan to everyone:
+ep
+from anilg to everyone:
+completed
+from suganthi to everyone:
+completed
+from SP, Muthukkaruppan to everyone:
+New man
+from sruthi to everyone:
+running in newman
+from cb-kavi to everyone:
+completed
+from vinod to everyone:
+Completed in Runner, WIP in NewMan
+from balamurugan to everyone:
+postman completed, newman in progress
+from Saravanan to everyone:
+completed
+from Jeeva (Guest) to everyone:
+WIP
+from pranathi sadhula to everyone:
+completed both runner and newman
+from Narasimhan to everyone:
+WIP
+from Sadhasivam to everyone:
+completed runner, working on newman
+from Jaydeep to everyone:
+WIP
+from 246145 - Sankari Chandran to everyone:
+Completed with Collection Runner
+from Ravikumar S to everyone:
+completed in Runner
+from Ananda to everyone:
+WIP in Newman
+from srikanth to everyone:
+newman wip
+from Chandu priya to everyone:
+WIP in NewMan
+from Gopalakrishnan to everyone:
+Completed inn runner. WIP in newman
+from Bharathi to everyone:
+completed runner ,newman in progress
+from Muthu Kumaran to everyone:
+in newman
+from Baskar to everyone:
+completed in runner
+from Mahabu Basha to everyone:
+WIP - Not able to execute locally
+from sangitha to everyone:
+I get bad request
+from Ramachandran to everyone:
+completed
+from sangitha to everyone:
+yeah in the runnder.. but when I ran without variables it ran successfully
+from sakthi to everyone:
+Completed
+from Deepak Sadanandan to everyone:
+completed
+from Imran Hussain to everyone:
+completed
+from Senthil to everyone:
+Completed
+from sruthi to everyone:
+completed
+from Senthil to everyone:
+Where to check the logs for the newman execution?
+from Senthil to everyone:
+if I need to see the response 
+from Senthil to everyone:
+Sure... Thanks
+from nirmal to everyone:
+i could see only one entry babu in service now
+from Nagarajan to everyone:
+can we compare response of two response keys in test?
+from Nagarajan to everyone:
+ok thanks sir...
+from Senthil to everyone:
+Completed
+from nirmal to everyone:
+i gave 4 entrys in json but onlky one i  could see it in service now
+from Selva to everyone:
+COmpleted
+from nirmal to everyone:
+i could see only one log entry
+from Roshan to everyone:
+how to confirm after running in newman?
+from SP, Muthukkaruppan to everyone:
+Completed
+from Vigneshwar R to everyone:
+EP
+from Mahabu Basha to everyone:
+gp
+from cb-kavi to everyone:
+ep
+from Nags-PC to everyone:
+ep
+from 246145 - Sankari Chandran to everyone:
+yes sir
+from sruthi to everyone:
+EP
+from Nagarajan to everyone:
+ep
+from suganthi to everyone:
+EP
+from srikanth to everyone:
+gp
+from Venkat to everyone:
+ep
+from Jayakumar B to everyone:
+ep
+from balamurugan to everyone:
+ep
+from vinod to everyone:
+EP
+from pranathi sadhula to everyone:
+ep
+from Roshan to everyone:
+EP
+from Chandu priya to everyone:
+Completed
+from anilg to everyone:
+EP
+from Bharathi to everyone:
+EP
+from Visa to everyone:
+ep
+from VENKAT to everyone:
+ep
+from Gopalakrishnan to everyone:
+EP
+from Chandu priya to everyone:
+ep
+from Nirmaladevi to everyone:
+ep
+from Ananda to everyone:
+EP
+from Imran Hussain to everyone:
+EP
+from Deepak Sadanandan to everyone:
+EP
+from Saravanan to everyone:
+ep
+from pushp to everyone:
+EP
+from shankar to everyone:
+ep
+from Ravikumar S to everyone:
+ep
+from Benz to everyone:
+ep
+from senthil to everyone:
+ep
+from Krishna to everyone:
+ep
+from Muthu Kumaran to everyone:
+EP
+from sangitha to everyone:
+ep
+from ATHIRA V to everyone:
+ep
+from Selva to everyone:
+EP
+from Baskar to everyone:
+ep
+from Senthil to everyone:
+nope
+from Vigneshwar R to everyone:
+No
+from balamurugan to everyone:
+response section
+from Mahabu Basha to everyone:
+nope
+from Gokila to everyone:
+nope
+from Ravikumar S to everyone:
+no
+from Manikandan Rudrappa to everyone:
+Sir, My laptop stopped  supporting all of a sudden..,,, I’m connected with mobile as of now 
+from Sadhasivam to everyone:
+working
+from vinod to everyone:
+Done - Visualization coming up
+from 246145 - Sankari Chandran to everyone:
+Done
+from Deepak Sadanandan to everyone:
+done
+from balamurugan to everyone:
+Done
+from Vigneshwar R to everyone:
+Done
+from Bharathi to everyone:
+done
+from Jeeva (Guest) to everyone:
+done
+from Nags-PC to everyone:
+Done
+from Ramachandran to everyone:
+done
+from Roshan to everyone:
+done
+from Krishna to everyone:
+done
+from sruthi to everyone:
+done
+from senthil to everyone:
+done
+from Nagarajan to everyone:
+done
+from srikanth to everyone:
+done
+from Gokila to everyone:
+done
+from pushp to everyone:
+Done
+from Muthu Kumaran to everyone:
+done
+from sakthi to everyone:
+done
+from anilg to everyone:
+Done
+from pranathi sadhula to everyone:
+done
+from Gopalakrishnan to everyone:
+done
+from Vigneshwar R to everyone:
+Sir, This is not actual UI (graph data). We are making the data to see like graph
+from sangitha to everyone:
+done
+from VENKAT to everyone:
+done sir
+from suganthi to everyone:
+done
+from Selva to everyone:
+Done
+from Venkat to everyone:
+done
+from Rohini V to everyone:
+done
+from cb-kavi to everyone:
+Done
+from Vigneshwar R to everyone:
+Okay sir
+from Selva to everyone:
+EP
+from sruthi to everyone:
+ep
+from Ramachandran to everyone:
+ep
+from VENKAT to everyone:
+ep
+from Sadhasivam to everyone:
+EP
+from cb-kavi to everyone:
+ep
+from Chandu priya to everyone:
+ep
+from pranathi sadhula to everyone:
+ep
+from anilg to everyone:
+EP
+from senthil to everyone:
+ep
+from Nagarajan to everyone:
+ep
+from srikanth to everyone:
+EP
+from Senthil to everyone:
+New Code Generation mode is in Enterprise?
+from Nags-PC to everyone:
+ep
+from Imran Hussain to everyone:
+ep
+from Gopalakrishnan to everyone:
+EP
+from pranathi sadhula to everyone:
+ep
+from Sadhasivam to everyone:
+EP
+from anilg to everyone:
+ep
+from VENKAT to everyone:
+ep
+from Deepak Sadanandan to everyone:
+EP
+from srikanth to everyone:
+EP
+from Nagarajan to everyone:
+ep
+from suganthi to everyone:
+EP
+from Senthil to everyone:
+EP
+from balamurugan to everyone:
+when multiple people work on same project how we ll recolve conflicts when syncing?
+from balamurugan to everyone:
+yes Babu
+from balamurugan to everyone:
+got it
+from balamurugan to everyone:
+ok
+from Sadhasivam to everyone:
+theme to white plz
+from Manirathinam to everyone:
+EP
+from balamurugan to everyone:
+ep
+from 246145 - Sankari Chandran to everyone:
+will this Monitor send a mail after completion
+from Vigneshwar R to everyone:
+Does Postman application should be open always for scheduler?
+from 246145 - Sankari Chandran to everyone:
+fine sir
+from Benz to everyone:
+Is there an option to publish the performance report?
+from Vigneshwar R to everyone:
+Thanks sir
+from Jayakumar B to everyone:
+so no one should be present phyically when monitor (pc) is used ?
+from Jayakumar B to everyone:
+or run through postman
+from Jayakumar B to everyone:
+ok
+from balamurugan to everyone:
+Babu, diff between Fork and Duplicate is 
+-When Duplicate, changes in source will not reflect in copy
+-When Fork, changes in source or copy collection will refelct on the other
+is this correct?
+from Selva to everyone:
+duplicating it
+from Selva to everyone:
+sorry copying
+from Vigneshwar R to everyone:
+Why we are saying monitor as performance?
+from Vigneshwar R to everyone:
+Got it sir. Thank you!
+from sruthi to everyone:
+babu on wednesday you asked us to remind you about the people who dont have scope to work with api in project. 
+from sruthi to everyone:
+okay
+from Senthil to everyone:
+Babu... Could you please let us know from where we can check the newman execution logs?
+from Senthil to everyone:
+after the break
+from Jayakumar B to everyone:
+1.1) OAuth
+-is an Access key which can be used by anyone use to login
+-Auth will be in form of token
+-Does not require user name password when Auth token is used
+-user authorisation - goes directly to auth server
+-OAuth token is temprory access can be given to anyone without actual authorisation
+2.Multiple Data -File 
+-when create a incident, user want to create multiple data without Hardcoding,
+-all in colleciton, global and environment variables are only for one time,
+-when can i used the data. 1. Run from Collection runner, 2. Newman
+Body>> [{{"short_desc":"This is the 1st "}}
+Collecion runner >> choose collection >> 
+]
+3. Visualization:
+- postman>Collection> Tests>>
+-pass the data>
+Workspace:
+-create workspace for the team> all the code base can be moved to the workspace
+-team files can be accessed from workspace
+-all my codes in postman will be available in path under >> settings>>
+from Roshan to everyone:
+Babu how abou the logs which we run in newman?
+from Senthil to everyone:
+Got it
+from Senthil to everyone:
+Thanks
+from Roshan to everyone:
+Thank you
+from shankar to everyone:
+1. Opensource authentication using access key/ token
+2. Paramerterize data with csv/json 
+3. Postman Visualize d
+4. features available in postman enterprise edition
+5. accessing github to store the request from postman 
+
+from senthil to everyone:
+Autorization:
+    Oauth1.0 and 2.0
+    How to generate token for servicenow
+Reading data from external systems:
+   csv and JSON
+Visualization:
+    to create report, charts etc
+    
+Enterprise edition features:
+    Team collaboration
+    Integeration
+    Code genearation
+    Monitor
+from srikanth to everyone:
+1. O-Auth
+2. Data Parameter
+3. Data Parameter run thru Runner
+4. Data Parameter run thru NewMan
+5. Visualization 
+6. Enterprice edition features
+from SP, Muthukkaruppan to everyone:
+How to Create a OAuth Token
+How to USe it on the POSTMAN
+How to set Multiple Data using Data File
+Visualization - How to show the data in a HTML format
+Enterprise POSTMAN 
+    - How to create a team worksapce
+    - How to collobarte all the collection acrros the team
+    - How generate a GITHUB token to access it via postman
+    - How to syn files to GITHUB from POSTMAN
+    - Monitor a Performance testing where we can schedule a job and ferequecy to execute the requests
+from suganthi to everyone:
+- OAuth - generating token and using it
+- Multple data - running the collection for multiple set of data (via csv and Json)
+- Visualization: represent the result in visual form
+- Features : setting working directory, theme
+- Enterprise features : 
+    - integrating with 3rd party like github
+    - Monitoring performance; scheduling the frequency of request and capturing the perfomance of the  runs
+    - Code generation
+from 246145 - Sankari Chandran to everyone:
+So far Learnt Today - 4/18:
+1. Generating token -OAuth (instead of using credentials)
+2. Passing Multiple Data - CSV/JSON
+3. Visualization - using Visualizer function
+4. Postman - Enterprise Features - Monitor, Saving Collections, Integration with GITHUB,Trigerring the collection in defined time automatically, Shortcuts etc
+from Roshan to everyone:
+-OAUTH
+ -Abstract protocol flow
+ -Auth code flow
+  - Creating Registry in Service now
+  - Parameterizing in Postman as OAUTH2.0
+-Multiple Data(Data Variable)
+ -Can be run only in collection runner/Newman
+ -csv and Json readinf format
+-Visualizer
+-Enterprise Features
+ -Team Collabaration
+ -Integration-GITHUB
+ -Peformance monitoring
+from pranathi sadhula to everyone:
+
+Oauth - open source authenictaion system.
+     Oauth key or token is provided to access application.
+Data perameterisation: can be done via Postam Runner and Newman
+    json file or csv file are used
+Newman cmd : newman run coll.json -g globals.json -d data.csv or data.json 
+Here -d stands for data 
+Visualisation : graphical representaion 
+pm.visualiser.set(template,{repsonse:pm.response.json});
+Here template is to be given to visualise the response. It can be done using :
+let template = {{#each resp.result    
+        <p>{{@key}}</p?
+        {{/each}} --> this gets each key from response and visuaiilse 
+Enterprise features:
+1Collabarating with team
+2.Github colleabartaion
+3.Monitors
+from clinda to everyone:
+1.Open source Autorization: Oauth1.0 and 2.0  
+2. Oauth2.service now example
+3.Reading data from external systems: csv and JSON 4.Visualization:  
+    to create report, charts etc  
+5.Enterprise edition features:  
+    Team collaboration  
+    Integeration  
+    Code genearation  
+    Monitor
+ 
+from Gopalakrishnan to everyone:
+1.1) OAuth using authorization code and password credentials
+
+2.Multiple Data 
+scope of the variable
+Creating data file using json and CSV
+how to use the data file  in postman
+How to execute and see the result in postman runner and newman
+
+3. Visualization:
+ 
+Where and how to pass the data to view the output in visualization
+Create output in chart 
+4.features available in postman enterprise edition
+from vinod to everyone:
+1. Postman Authorization -> OAuth2
+2. Detailing how OAuth flow works
+3. How to implement variable type -> Data 
+4. How to use Visualization in Postman
+5. Postman Enterprise edition features like Team Collaboration, Integrate with Source Codes, Monitoring/
+6. Postman settings.
+from sruthi to everyone:
+    1. OAUTH: opensource authentication
+    2. Learnt about the flow diagram (abstract protocol flow and authentication code)
+    3. Integration for postman
+    4. Creating access token in service now and integrating it with postman
+    5. Using auth2.0 executing all the requests
+    6. Dealing with multiple data (csv and json) and executing them from runner and newman
+    7. Learnt about visualization and importing a collection and running it
+    8. Learnt about enterprise features
+
+from Suhail to everyone:
+Enterprise POSTMAN 
+Create a team worksapce
+Collobarte all the collection across the team
+Generate a GITHUB token to access it via postman
+Sync files to GITHUB from POSTMAN
+Monitor Performance by schedule a job and frequency to execute the requests
+Paramerterize data with csv/json
+How to Create a OAuth Token
+How to Use it on the POSTMAN
+How to set Multiple Data using Data File
+Postman Visualization - How to show the data in a HTML format
+Accessing github to store the request from postman
+
+from Nagarajan to everyone:
+1) Postman OAUTH
+2) Parameter in the Body
+3) multiple Data with multiple iteration in the collection runner and newman
+4) Visualizer
+5) Learnt Postman enterprise edition's features 

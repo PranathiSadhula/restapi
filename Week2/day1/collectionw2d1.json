@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "0cffdc51-a5db-4c8c-b6ab-02de8b612b87",
+		"name": "Week2_day1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create CR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"short_description\" : \"{{short_desc}}\",\n\t\"description\" : \"Pranathi Sadhula\",\n\t\"category\" : \"Software\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev49243.service-now.com/api/now/table/change_request",
+					"protocol": "https",
+					"host": [
+						"dev49243",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"change_request"
+					]
+				},
+				"description": "Get all Incidents from SeriveNow\n"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Tuna@123",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ec574a24-3456-43cf-9638-75127ecf5999",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "17fb7174-e0ce-489b-bfc2-0450acffbfbf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

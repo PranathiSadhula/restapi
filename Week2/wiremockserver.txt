@@ -1,0 +1,5 @@
+<dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock</artifactId>
+            <version>2.26.3</version>
+        </dependency>

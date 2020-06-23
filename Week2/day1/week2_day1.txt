@@ -1,0 +1,48 @@
+1) OAuth
+https://developer.servicenow.com/blog.do?p=/post/inbound-oauth-auth-code-grant-flow-part-1/
+2) Multiple Data - File
+3) Visualization
+4) Enterprise Features 
+5) Interceptor
+https://blog.postman.com/postman-interceptor-the-next-generation-view-source-for-the-api-economy/
+6) API Contracts 
+https://apievangelist.com/2019/07/15/what-is-an-api-contract/    
+7) Jenkins Integration
+8) PostMan Documentation (Sample) - NASA
+https://documenter.getpostman.com/view/35240/SVmtxerV?version=latest
+9) GitHub Integrations
+https://github.com/settings/tokens
+
+
+Postman-April_pranathi
+Access Token
+8RdRd_SP6SaZaAaxn_frjKMfxPqrZD3qhODpHKWzDAzFRe8u8_yfEQadN2f0x7Bg3PsYe4FbMfyQsZNcRp7UUw
+Token Type
+Bearer
+refresh_token
+KGGkQBF76D7qIVT_oEdoM4gVhShJvr2NCIWjtLbLFkSQ4LyQGAQYto-BmqGYT2ehsYsFlOYkw9bZ89q44YYGUw
+scope
+useraccount
+expires_in
+1799
+
+
+1) Create a new Collection (DataRunner)
+2) Duplicate your create change request with no environmental / global
+3) Move it to new collection
+4) First, Run and confirm - it works !!
+5) Paramaterize the body to take the test data from csv file
+6) Run from collection runner
+   choose data file
+7) Run from NewMan and confirm it works for multiple data
+   -d 
+
+
+https://bestbuyapis.github.io/api-documentation/#stores-api==>
+https://developer.bestbuy.com/ --> sign up to create api key
+
+1) Print total best buy stores
+https://api.bestbuy.com/v1/stores?format=json&show=city,longName&pageSize=2&apiKey=YourAPIKey
+https://api.bestbuy.com/v1/stores?format=json&show=storeId,storeType,name,city,region&apiKey=qUh3qMK14GdwAs9bO59QRSCJ
+2) Returns stores within 20 miles of ZIP code 890194
+https://api.bestbuy.com/v1/stores(postalCode=890194,20))?format=json&show=storeId,storeType,name,city,region&apiKey=qUh3qMK14GdwAs9bO59QRSCJ

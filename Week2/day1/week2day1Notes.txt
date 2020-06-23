@@ -1,0 +1,18 @@
+
+Oauth - open source authenictaion system.
+ 	Oauth key or token is provided to access application.
+Data perameterisation: can be done via Postam Runner and Newman
+	json file or csv file are used
+Newman cmd : newman run coll.json -g globals.json -d data.csv or data.json 
+Here -d stands for data 
+Visualisation : graphical representaion 
+pm.visualiser.set(template,{repsonse:pm.response.json});
+Here template is to be given to visualise the response. It can be done using :
+let template = {{#each resp.result	
+		<p>{{@key}}</p?
+		{{/each}} --> this gets each key from response and visuaiilse 
+
+Enterprise features:
+1Collabarating with team
+2.Github colleabartaion
+3.Monitors

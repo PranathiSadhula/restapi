@@ -1,0 +1,51 @@
+https://repo1.maven.org/maven2/ --> maven repo containing all maven projects
+
+// Classroom 
+1) Change Request (Get)
+    a) state -> -5 (new)
+    b) type -> normal
+    c) i need only number, sys_id
+    d) Get the count of the change_requests
+2) Change the response as XML
+    a) Confirm the count matches as expected 
+
+
+1) Create Change Request -> With no body -> Print sys_id
+2) Create CR with body as String -> Print number
+3) Create CR with file (json) -> Print the sys_id
+4) Run with DP and in Parallel 
+
+
+1) Delete an existing CR using sys_id
+2) Change the description of the CR using sys_id
+
+
+Homework
+1) JIRA 
+    a) Get all Issues (only in 24 hours)
+    b) Create Issue & Attachment of file to the issue
+    d) Get random issue and Delete that Issue
+    e) Get the recently created issue & Update that Issue
+2) PostMan (BestBuy) -> Convert them Rest Assured
+
+
+
+Rest Assured:
+Base_URI -> runs on server
+base_path -> runs on localhost
+default_auth : noAuthenticScheme() -> no auth required
+RequestSpecification.class -> helps to get perticular resp
+ 	ex: given().param("key":"value").get();
+
+Convert resp to JSOn or XML :
+JsonPath jresp = resp.JsonPath();
+XMLPath jresp = resp.XMLPath();
+
+
+Req params:
+ single : .param("param")
+multiple static : param(p1).param(p2)....
+dynamic : params(map)
+
+
+testng dataprovider

@@ -1,0 +1,47 @@
+Postman :
+request -> sent to server
+collection > similar to package or folder in java
+API is build before  UI and befor API built, DB is build
+
+Moc server is used when api is not ready
+
+Postman has 2 req : get and post
+
+Postman
+	RequestTypes
+		GET 
+	Status Code : 200
+                Fetches records 
+Returns 1 or many records on sucess
+Returns 0 on failure
+		POST
+Status Code : 201
+insterts one record into system
+Returns 1 record(-- record which is instered) on success
+		DELETE
+Status Code : 204
+Removes record from system
+Returns nothing or one
+		PUT
+Status Code : 204
+updates enitre record(all columns) into system
+Returns one
+		PATCH
+Status Code : 201
+updates part of a record into system
+Returns one
+	Components
+		Collection
+			folder
+			Request
+				URL
+					HostName or IP address
+					Port(Optional)
+					Resources(Example:table names, attachment files etc which are common accross the application)
+				Request Type
+				Request Body
+					form-data
+					raw
+					params
+
+

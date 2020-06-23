@@ -1,0 +1,35 @@
+ZOHO - Customer 
+Document https://www.zoho.com/subscriptions/api/v1/
+1. Create an entry in zoho for a new Customer and confirm the new Customer is add to the existing customer list.
+2. Update the shipping address, Contact details of the Customer 
+3. Remove an existing customer from the list and confirm it.
+Implement the above Scenario On both PostMan and Rest Assured as Channing.
+
+
+url to get code--
+https://accounts.zoho.com/oauth/v2/auth?
+scope=ZohoSubscriptions.fullaccess.all&
+client_id=1000.RDXLRMR7U4GO4ISGGREI3XR4SESMVH&
+state=testing&
+response_type=code&
+redirect_uri=http://www.zoho.com/subscriptions&
+access_type=offline
+
+
+
+
+https://accounts.zoho.com/oauth/v2/auth?access_type=offline&prompt=consent
+
+redirect-uri --
+
+https://www.zoho.com/subscriptions/?state=testing&code=1000.c41364e51e8e6c64c096dc164023382b.3f711935b0639f37a991eb1e84306290&location=us&accounts-server=https%3A%2F%2Faccounts.zoho.com&
+1000.461f458a5f941cee3ebf1a5f70ce061c.dbaa0d7e2e8b31e876911cc405db653e
+User ID: 717013346
+Organization ID: 717079474
+
+"access_token": "1000.c2124143d1b271a3bf885f74406c3d14.66f7b94aee5fbe7e4786f92b8b50e741",
+    "refresh_token": "1000.ab915996fef65c6c04fc0fcf01383a11.dacfed59c82632dfa3c1c017e71ee61a",
+
+
+
+pranathisadhula@gmail.com

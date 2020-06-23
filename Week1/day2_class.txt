@@ -1,0 +1,41 @@
+1) ServiceNow -> CR 
+2) Make a copy of the folder (Duplicate) -> rename as "Chaining"
+3) Create 3 variables
+Global -> sys_id_change_request
+Collection -> table_name  [change_request]
+Environment -> server [your URL]
+Replace the collection and environment in the chaining folder requests
+Save, Open the logs/console and run the requests/tests -> confirm it is working
+
+
+
+1) Pre-Req: Global, Collection, Environment
+a) Get CR -> One of the change request sys_id (random)
+   // Self learn -> Math.rand, Math.floor
+b) Store that in the global variable
+c) Delete that CR using sys_id in the path parameter 
+d) Use Runner to run both Get and Delete together for 2 iteration
+
+
+1) User Details -> Get Response -> Filter by First Name / Email  -> Get sys_id (user) (200) -> Pass to Next
+   
+   table: sys_user
+   // Find the sys_id of one of the user (Abel) -> Using Programming -> Store in the global variable
+   sys_id_user
+2) Create Incident -> Use sys_id (user) -> Incident Number -> sys_id (incident) (201) -> Pass to Next
+   Body -> Parameter  ==> pending
+
+
+NewMan - Command Line -> NodeJs 
+   1) Install NodeJs  (https://nodejs.org/dist/v12.16.2/node-v12.16.2-x64.msi)
+   2) Verify the installation is complete : node -v (cmd) | npm -v (cmd)
+   
+   3) Install Newman 
+      npm install -g newman
+   4) Verify the installation is complete : newman -v
+   5) Export the collection (request), environment, globals
+    a) Collection -> Only the request you wanted to run in NewMan (.json)
+        b) Environment (only the environment -> that you use) -> json
+        c) Globals
+    6) Run the newman scripts
+       newman run SN_Collection.json -e environment.json -g globals.json -n 2

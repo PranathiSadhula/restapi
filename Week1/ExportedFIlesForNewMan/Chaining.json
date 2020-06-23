@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "28e58b43-b69b-43f2-976a-f0cc92db7468",
+		"name": "APICLASSROOMEXERCISE_NewMan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chanining_NewMan",
+			"item": [
+				{
+					"name": "Get Random CR test with pm.test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bd23a9a-4353-418c-8869-24a2087e5bd1",
+								"exec": [
+									"// get response",
+									"var resp = pm.response.json();",
+									"console.log(resp);",
+									"",
+									"//parse resp and get one sys_id",
+									"/*var sys_id = resp.result[0].sys_id;",
+									"console.log(sys_id);*/",
+									"//parse the resp and get a random sys_id",
+									"var count = resp.result.length;",
+									"console.log(count);",
+									"var sys_id =resp.result[Math.floor(Math.random()*count)].sys_id;",
+									"console.log(sys_id);",
+									"",
+									"//store sys_id in global variable",
+									"pm.globals.set(\"sys_id_change_request\",sys_id);",
+									"",
+									"",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"console.log(pm.response.responseTime);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Pranathi75@",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{server}}/api/now/table/{{table_cr}}",
+							"protocol": "https",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"{{table_cr}}"
+							],
+							"query": [
+								{
+									"key": "sysparam_fieds",
+									"value": "number,sys_id,type,state",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "normal",
+									"disabled": true
+								},
+								{
+									"key": "state",
+									"value": "-5",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get all Incidents from SeriveNow\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete CR with pm.test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b9e044e-d6eb-4479-bdf8-a634060a9d6d",
+								"exec": [
+									"pm.test(\"Successful Delete request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{server}}/api/now/table/{{table_cr}}/{{sys_id_change_request}}",
+							"protocol": "https",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"{{table_cr}}",
+								"{{sys_id_change_request}}"
+							]
+						},
+						"description": "Get all Incidents from SeriveNow\n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Pranathi75@",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e06b5685-a1ea-4755-8802-61e5ef53be7d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e78bb9c7-4ed2-40b1-bbe0-9fef755a6301",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "54ce0c9d-7223-4b86-97f4-994b105dbbf5",
+			"key": "table_cr",
+			"value": "change_request",
+			"type": "string"
+		},
+		{
+			"id": "c19d5279-5d81-447c-8580-6f2169dd98d6",
+			"key": "table_user",
+			"value": "sys_user",
+			"type": "string"
+		},
+		{
+			"id": "fb99ebb2-98c7-4d4c-9d40-e75a223a1f0b",
+			"key": "table_incident",
+			"value": "incident",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

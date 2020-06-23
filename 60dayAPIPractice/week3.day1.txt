@@ -1,0 +1,25 @@
+Webex:
+Documents: 
+https://developer.webex.com/docs/api/getting-started
+Steps:-
+1. Create a non recurring meeting for next Day between 8:00 PM to 9:00 PM
+2. Update the meeting timing from 9:00 to 10:00 PM
+3. Create a recurring meeting for 8 weeks 
+4. Get all the recurring meetings for the current week
+5. Delete a random recurring meeting
+
+clientid - C05638edf8dd92372152811f25136bc4e9f288ea75f175ce56ff3025a79d81db1
+secret - 6abeb24d257ab6579ec516be2bcabfc8def58e715349bfaefb7be67d050a7a7f
+
+https://webexapis.com/v1/authorize?client_id=C58a9d0a5eb0df2bc9f24bbfb13bb062b9c2af9e5786f3350be4cb395bfd6ad8d&response_type=code&redirect_uri=https%3A%2F%2Fgoogle.com&scope=spark%3Aall%20spark%3Akms&state=restapitesting
+integrationid - Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MwNTYzOGVkZjhkZDkyMzcyMTUyODExZjI1MTM2YmM0ZTlmMjg4ZWE3NWYxNzVjZTU2ZmYzMDI1YTc5ZDgxZGIx
+
+
+https://meetingsapac30.webex.com/meet/pr1561589157
+
+
+
+
+
+
+https://automationrhapsody.com/introduction-postman-examples/

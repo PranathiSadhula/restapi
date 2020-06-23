@@ -1,0 +1,7 @@
+APItude:
+https://developer.hotelbeds.com/docs?hotel
+- Check the rooms availability
+- Check the rates for in the hotels having room availability
+- Book the room in the first hotel having  rateType="BOOKABLE" in the respose
+- Get the Booking details
+- Delete the Booking (Booking Cancellation)         

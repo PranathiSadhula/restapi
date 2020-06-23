@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "ad5511bf-f3bd-437c-aa09-24a131ba3dc1",
+		"name": "Day2_assignmentChaining",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllIssuesCreatedin24hrs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc276662-12d5-4eba-afb3-2bc0b7757c13",
+						"exec": [
+							"// get response",
+							"var resp = pm.response.json();",
+							"",
+							"//print issueId",
+							"var count = resp.issues.length;",
+							"var issueCountInLastDay = 0;",
+							"console.log(\"count: \"+count);",
+							"        var currTime = new Date().getTime();",
+							"     //   console.log(\"currTime :\"+currTime);",
+							"        var last24thHr = 24*60*60*1000",
+							"      //  console.log(\"last24thHr :\"+last24thHr)",
+							"        var expectedCreatedTime = currTime - last24thHr",
+							"     ",
+							"pm.globals.set(\"expectedCreatedTime\", expectedCreatedTime);",
+							"    resp.issues.forEach(function(entry){",
+							"    var issue_id = entry.id;",
+							"    var createdTime = entry.fields.created;",
+							"    var createdMS = new Date(createdTime).getTime();",
+							"    var expectedCreatedTime = pm.globals.get(\"expectedCreatedTime\"); ",
+							"   ",
+							"   // console.log(createdTime +\" in millsec :\"+createdMS)",
+							"    if( createdMS > expectedCreatedTime)",
+							"    {",
+							"         var key = entry.key",
+							"        console.log(issue_id+\" : \"+createdTime);",
+							"    }",
+							"   /* pm.test(\"Test if issue created in last 24hrs\", function () {",
+							"        ",
+							"    if( pm.expect(createdMS).to.be.above(expectedCreatedTime))",
+							"    {",
+							"         var key = entry.key",
+							"        console.log(issue_id+\" : \"+createdTime);",
+							"        issueCountInLastDay++;",
+							"    }",
+							"});*/",
+							"   ",
+							"})",
+							"",
+							"//set a random issueId into global variable :jira_issue_id_rndm",
+							"var randomIssueId = resp.issues[Math.floor(Math.random()*count)].id;",
+							"pm.globals.set(\"jira_issue_id_rndm\", randomIssueId);",
+							"",
+							"console.log(\"issueCountInLastDay: \"+issueCountInLastDay);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "45e9cc37-a5f6-4252-8043-6d2b95800e23",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{server}}/rest/api/2/search?jql=project=\"MAR\"&fields=created",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=\"MAR\""
+						},
+						{
+							"key": "fields",
+							"value": "created"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete randam issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b9e044e-d6eb-4479-bdf8-a634060a9d6d",
+						"exec": [
+							"console.log(pm.globals.get(\"initial_issue_count\"));",
+							"",
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{server}}/rest/api/2/issue/{{jira_issue_id_rndm}}",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{jira_issue_id_rndm}}"
+					]
+				},
+				"description": "Get all Incidents from SeriveNow\n"
+			},
+			"response": []
+		},
+		{
+			"name": "ConfirmIssuesReducedby1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc276662-12d5-4eba-afb3-2bc0b7757c13",
+						"exec": [
+							"//get current time ",
+							"var endtime = new Date().getTime();",
+							"console.log(endtime);",
+							"",
+							"var starttime = 24*60*60*1000;",
+							"console.log(starttime);",
+							"",
+							"// starttime < created > endtime",
+							"",
+							"// get response",
+							"var resp = pm.response.json();",
+							"console.log(resp);",
+							"",
+							"//set current count of issues after deletion into global variable : current_issue_count",
+							"var count = resp.issues.length;",
+							"pm.globals.set(\"current_issue_count\", count);",
+							"",
+							"//verify if issue count reduced by 1 ",
+							"pm.test(\"verify if issue count reduced by 1\", function () {",
+							"    pm.expect(pm.globals.get(\"initial_issue_count\")).not.equal(count);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fields",
+						"type": "text",
+						"value": "key",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{server}}/rest/api/2/search?jql=created > -1d",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "created > -1d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9f513c24-8fa4-46db-96d1-fe6fc0519731",
+						"exec": [
+							"var resp = pm.response.json();",
+							"console.log(resp);",
+							"",
+							"pm.globals.set(\"jira_issue_id_attachment\",resp.id);",
+							"console.log(resp.id);",
+							"",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Atlassian-Token",
+						"value": "no-check",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fields\": {\n       \"project\":\n       {\n          \"key\": \"MAR\"\n       },\n       \"summary\": \"New Defect Pranathi for Day2 assignment\",\n       \"description\": \"Creating of an issue for Day2 assignment --> To add attachment\",\n\n       \"issuetype\": {\n    \n          \"name\": \"Bug\"\n       }\n        \n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{server}}/rest/api/2/issue/",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddAttachmentsToIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "972fd182-d6c9-4d8c-ba48-c46e2ea72189",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Atlassian-Token",
+						"value": "no-check",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [
+								"jiraattachment1.txt",
+								"jiraattachment2.txt"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{server}}/rest/api/2/issue/{{jira_issue_id_attachment}}/attachments",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{jira_issue_id_attachment}}",
+						"attachments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "kEJxzmhkQzvdeP8iysWN2D1B",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "rajalakshmi.govindarajan@testleaf.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "69641083-1b85-496b-a8a0-e6371d528807",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1ba11ba4-b90f-421f-b003-d2a4fde04a1c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

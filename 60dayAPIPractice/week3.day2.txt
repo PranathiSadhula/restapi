@@ -1,0 +1,13 @@
+UiBank
+https://uibank.uipath.com/
+ Test # 1 
+1) Register for an account
+2) Login
+3) Get Account Details
+Test # 2
+1) Login
+2) Apply loan
+3) Verify Loan Status
+
+
+interceptor/netwotk tab

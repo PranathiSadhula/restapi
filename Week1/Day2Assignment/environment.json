@@ -1,0 +1,24 @@
+{
+	"id": "73bd6664-b497-4e2c-a19b-9fe43a4656cf",
+	"name": "Jira_Pranathi",
+	"values": [
+		{
+			"key": "server",
+			"value": "api-mar2020.atlassian.net",
+			"enabled": true
+		},
+		{
+			"key": "initial_issue_count",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "variable_key",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-04-14T10:21:01.914Z",
+	"_postman_exported_using": "Postman/7.22.1"
+}
