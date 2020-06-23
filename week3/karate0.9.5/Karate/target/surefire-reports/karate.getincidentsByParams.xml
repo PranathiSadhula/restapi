@@ -1,0 +1,33 @@
+<testsuite failures="0" name="karate/getincidentsByParams.feature" skipped="0" tests="2" time="8.792045">
+  <testcase classname="karate.getincidentsByParams" name="Get All Incidents for different params" time="4.397748">
+    <system-out>* def query = { sysparm_fields: 'number, sys_id,severity', category: 'software', sysparm_limit: 2 } . passed
+* print query ............................................................. passed
+Given url 'https://dev49243.service-now.com/api/now/table/incident' ....... passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+And params query .......................................................... passed
+And method get ............................................................ passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+Then print response ....................................................... passed</system-out>
+  </testcase>
+  <testcase classname="karate.getincidentsByParams" name="Get All Incidents for different params" time="4.394296">
+    <system-out>* def query = { sysparm_fields: 'number, sys_id,severity', category: 'software', sysparm_limit: 2 } . passed
+* print query ............................................................. passed
+Given url 'https://dev49243.service-now.com/api/now/table/incident' ....... passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+And params query .......................................................... passed
+And method get ............................................................ passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+Then print response ....................................................... passed
+* def query = { sysparm_fields: 'number,severity', category: 'inquiry', sysparm_limit: 1 } . passed
+* print query ............................................................. passed
+Given url 'https://dev49243.service-now.com/api/now/table/incident' ....... passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+And params query .......................................................... passed
+And method get ............................................................ passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+Then print response ....................................................... passed</system-out>
+  </testcase>
+</testsuite>

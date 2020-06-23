@@ -1,0 +1,31 @@
+<testsuite failures="2" name="karate/deleteincident.feature" skipped="0" tests="2" time="7.02972">
+  <testcase classname="karate.deleteincident" name="Delete Incident" time="4.43946">
+    <failure message="deleteincident.feature:8 - status code was: 404, expected: 204, response time: 2952, url: https://dev49243.service-now.com/api/now/table/incident/89d79ec12f2410100510d6ab2799b676, response: {&quot;error&quot;:{&quot;detail&quot;:&quot;Record doesn't exist or ACL restricts the record retrieval&quot;,&quot;message&quot;:&quot;No Record found&quot;},&quot;status&quot;:&quot;failure&quot;}">Given url 'https://dev49243.service-now.com/api/now/table/incident/89d79ec12f2410100510d6ab2799b676' . passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+When method delete ........................................................ passed
+Then status 204 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: deleteincident.feature:8 - status code was: 404, expected: 204, response time: 2952, url: https://dev49243.service-now.com/api/now/table/incident/89d79ec12f2410100510d6ab2799b676, response: {"error":{"detail":"Record doesn't exist or ACL restricts the record retrieval","message":"No Record found"},"status":"failure"}&#13;
+	at ✽.Then status 204 (deleteincident.feature:8)</failure>
+  </testcase>
+  <testcase classname="karate.deleteincident" name="Delete Incident" time="2.59026">
+    <failure message="deleteincident.feature:8 - status code was: 404, expected: 204, response time: 2195, url: https://dev49243.service-now.com/api/now/table/incident/12f75a012fa410100510d6ab2799b637, response: {&quot;error&quot;:{&quot;detail&quot;:&quot;Record doesn't exist or ACL restricts the record retrieval&quot;,&quot;message&quot;:&quot;No Record found&quot;},&quot;status&quot;:&quot;failure&quot;}">Given url 'https://dev49243.service-now.com/api/now/table/incident/89d79ec12f2410100510d6ab2799b676' . passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+When method delete ........................................................ passed
+Then status 204 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: deleteincident.feature:8 - status code was: 404, expected: 204, response time: 2952, url: https://dev49243.service-now.com/api/now/table/incident/89d79ec12f2410100510d6ab2799b676, response: {"error":{"detail":"Record doesn't exist or ACL restricts the record retrieval","message":"No Record found"},"status":"failure"}&#13;
+	at ✽.Then status 204 (deleteincident.feature:8)&#13;
+
+Given url 'https://dev49243.service-now.com/api/now/table/incident/12f75a012fa410100510d6ab2799b637' . passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+When method delete ........................................................ passed
+Then status 204 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: deleteincident.feature:8 - status code was: 404, expected: 204, response time: 2195, url: https://dev49243.service-now.com/api/now/table/incident/12f75a012fa410100510d6ab2799b637, response: {"error":{"detail":"Record doesn't exist or ACL restricts the record retrieval","message":"No Record found"},"status":"failure"}&#13;
+	at ✽.Then status 204 (deleteincident.feature:8)</failure>
+  </testcase>
+</testsuite>

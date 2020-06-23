@@ -1,0 +1,12 @@
+https://twchennai.github.io/VODQA-Chennai/
+mvn dependency:tree -Dverbose --> internal dependancies 
+
+
+Passing value from one feature to another
+* def resp = cal read('1.feature')
+* def sys_id = resp.response.result.sys_id;
+ * print sys_id;
+
+
+
+understanding api how it works/????

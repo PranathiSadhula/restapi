@@ -1,0 +1,41 @@
+12:21:52.090 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+12:21:52.201 [print] {
+  "sysparm_fields": "number,severity",
+  "category": "inquiry",
+  "sysparm_limit": 1
+}
+
+12:21:53.255 request:
+1 > GET https://dev49243.service-now.com/api/now/table/incident?sysparm_fields=number%2Cseverity&category=inquiry&sysparm_limit=1
+1 > Accept-Encoding: gzip,deflate
+1 > Authorization: Basic YWRtaW46VHVuYUAxMjM=
+1 > Connection: Keep-Alive
+1 > Host: dev49243.service-now.com
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_171)
+
+12:21:56.504 response time in milliseconds: 2955.91
+1 < 200
+1 < Cache-control: no-cache,no-store,must-revalidate,max-age=-1
+1 < Content-Type: application/json;charset=UTF-8
+1 < Date: Sat, 02 May 2020 06:51:56 GMT
+1 < Expires: 0
+1 < Link: <https://dev49243.service-now.com/api/now/table/incident?sysparm_fields=number%2Cseverity&category=inquiry&sysparm_limit=1&sysparm_offset=0>;rel="first",<https://dev49243.service-now.com/api/now/table/incident?sysparm_fields=number%2Cseverity&category=inquiry&sysparm_limit=1&sysparm_offset=-1>;rel="prev",<https://dev49243.service-now.com/api/now/table/incident?sysparm_fields=number%2Cseverity&category=inquiry&sysparm_limit=1&sysparm_offset=1>;rel="next",<https://dev49243.service-now.com/api/now/table/incident?sysparm_fields=number%2Cseverity&category=inquiry&sysparm_limit=1&sysparm_offset=456>;rel="last"
+1 < Pragma: no-store,no-cache
+1 < Server: ServiceNow
+1 < Set-Cookie: [JSESSIONID=89C38A39037F18634423B800204FA0FF; Path=/; HttpOnly;Secure, glide_user=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; HttpOnly;Secure, glide_user_session=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; HttpOnly;Secure, glide_user_route=glide.7470a14fdac8b492f6ea54c2b7b9cf7f; Max-Age=2147483647; Expires=Thu, 20-May-2088 10:06:03 GMT; Path=/; HttpOnly;Secure, glide_session_store=370219912FA010100510D6AB2799B6A8; Max-Age=1800; Expires=Sat, 02-May-2020 07:21:56 GMT; Path=/; HttpOnly;Secure, BIGipServerpool_dev49243=2458146826.38974.0000; path=/; Httponly; Secure]
+1 < Strict-Transport-Security: max-age=63072000; includeSubDomains
+1 < Transfer-Encoding: chunked
+1 < X-Is-Logged-In: true
+1 < X-Total-Count: 457
+1 < X-Transaction-ID: 7b0219912fa0
+{"result":[{"severity":"3","number":"INC0000015"}]}
+
+12:21:56.513 [print] {
+  "result": [
+    {
+      "severity": "3",
+      "number": "INC0000015"
+    }
+  ]
+}
+

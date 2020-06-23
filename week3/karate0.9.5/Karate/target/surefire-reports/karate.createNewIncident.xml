@@ -1,0 +1,10 @@
+<testsuite failures="0" name="karate/createNewIncident.feature" skipped="0" tests="1" time="5.496989">
+  <testcase classname="karate.createNewIncident" name="Create Incident" time="5.496989">
+    <system-out>Given url 'https://dev49243.service-now.com/api/now/table/incident' ....... passed
+And header Authorization = call read('basic-auth.js') { username: 'admin', password: 'Tuna@123' } . passed
+When request {"short_descrption":"Created from Karate"} ................... passed
+And method post ........................................................... passed
+Then status 201 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,8 @@
+ https://java-design-patterns.com/patterns/
+
+https://github.com/barancev/webdriver-factory
+
+https://github.com/testleaf-software/devtools-selenium <-- structural pattern(decorator pattern)
+
+
+sapienz
